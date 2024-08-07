@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { ProductsModule } from './products/products.module';
-
 import { AppRoutingModule } from './app-routing.module';
+import { ProductsModule } from './products/products.module';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProductListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
