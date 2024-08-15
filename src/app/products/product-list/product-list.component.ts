@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class ProductListComponent {
   selectedProduct = ''
 
+  products = ['Webcam', 'Microphone', 'Wireless Keyboard']
+
   onBuy() {
     window.alert(`You bought: ${this.selectedProduct}`);
   }
