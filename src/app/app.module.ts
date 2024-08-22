@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CopyrightDirective } from './copyright.directive';
 import { NumericDirective } from './numeric.directive';
 import { PermissionDirective } from './permission.directive';
+import { AutofocusDirective } from './autofocus.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PermissionDirective } from './permission.directive';
   ],
   imports: [
     BrowserModule,
-    ProductsModule
+    ProductsModule,
+    AutofocusDirective
   ],
   providers: [
     provideClientHydration()
