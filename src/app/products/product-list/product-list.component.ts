@@ -1,28 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit{
   selectedProduct: Product | undefined
+  products: Product[] = [];
+  private productService: ProductsService; //defines type
 
-  products: Product[] = [
-    {
-      name: 'Webcam',
-      price: 100
-    },
-    {
-      name: 'Microphone',
-      price: 200
-    },
-    {
-      name: 'Wireless Keyboard',
-      price: 85
-    }
-  ]
+  constructor() {
+    this.productService = new ProductsService();
+    // alternative way to write: productService: ProductsService
+  }
+
+  ngOnInit() {
+    this.products = this.productService.getProducts();
+  }
 
   onBuy() {
     window.alert(`You bought: ${this.selectedProduct?.name}`);
